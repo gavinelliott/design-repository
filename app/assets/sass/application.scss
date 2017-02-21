@@ -45,7 +45,7 @@ $site-width:  1080px;
 #big-bar .big-bar-wrapper {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 40px 0;
+  padding: 40px 30px;
 }
 
 .no-margin { padding-bottom: 0; margin-bottom: 0;}
@@ -89,7 +89,31 @@ $site-width:  1080px;
     font-size: 28px;
     padding: 0 0 0 20px;
 
-    span { font-weight: normal; font-size: 24px; margin-left: 10px; }
+    span { font-weight: normal; font-size: 22px; margin-left: 10px; }
   }
 
+}
+
+.sticker-list { margin-top: 40px; }
+.image {width: 100%; border-radius: 50%; }
+
+
+.image:hover {
+  -webkit-box-shadow: 0px 3px 0px 0px rgba(49, 50, 50, 0.29);
+  -moz-box-shadow:    0px 3px 0px 0px rgba(49, 50, 50, 0.29);
+  box-shadow:         0px 3px 0px 0px rgba(49, 50, 50, 0.29);
+  cursor: pointer;
+}
+
+#proposition-links {
+  float: right;
+
+  li {
+      margin-top: 5px;
+
+      a {
+      cursor: pointer;
+      font-weight: normal;
+      }
+  }
 }
