@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  DWP Design Repository
+{% endblock %}
+
+{% block content %}
+<div id="big-bar">
+  <div class="big-bar-wrapper">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge no-margin">Mission Patches</h1>
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <p class="hero-description">A variety of mission patches designed by the UX team for service teams in DWP Digital.</p>
+      </div>
+      <div class="column-one-third">
+        <a href="#" class="white-button">Request a mission patch</a>
+      </div>
+    </div>
+</div>
+</div>
+<main id="content" role="main">
+
+  <div class="grid-row sticker-list">
+    <div class="column-quarter column-one-quarter">
+      <img class="image" src="/public/images/patches/access-to-work.png"/>
+    </div>
+
+    <div class="column-one-quarter">
+      <img class="image" src="/public/images/patches/dwp-design-system.png"/>
+    </div>
+
+    <div class="column-one-quarter">
+      <img class="image" src="/public/images/patches/industrial-injuries-disablement-benefit.png"/>
+    </div>
+
+    <div class="column-one-quarter">
+      <img class="image" src="/public/images/patches/personal-independence-payment.png"/>
+    </div>
+  </div>
+
+  <div class="grid-row sticker-list">
+    <div class="column-quarter column-one-quarter">
+      <img class="image" src="/public/images/patches/prove-you-can-apply.png"/>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
