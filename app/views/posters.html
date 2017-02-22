@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  DWP Design Repository
+{% endblock %}
+
+{% block content %}
+<div id="big-bar">
+  <div class="big-bar-wrapper">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge no-margin">Posters</h1>
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <p class="hero-description">A variety of posters available from the UX team within DWP Digital.</p>
+      </div>
+      <div class="column-one-third">
+        <a href="#" class="white-button">Request a poster</a>
+      </div>
+    </div>
+</div>
+</div>
+<main id="content" role="main">
+
+  <div class="grid-row sticker-list">
+    <div class="column-quarter column-one-quarter">
+      <img class="poster" src="/public/images/posters/ask-what-people-do.png"/>
+    </div>
+
+    <div class="column-one-quarter">
+      <img class="poster" src="/public/images/posters/creating-a-digital-delivery-culture.png"/>
+    </div>
+
+    <div class="column-one-quarter">
+      <img class="poster" src="/public/images/posters/dwp-content-design-principles.png"/>
+    </div>
+
+    <div class="column-one-quarter">
+      <img class="poster" src="/public/images/posters/framing-the-problem.png"/>
+    </div>
+  </div>
+
+  <div class="grid-row sticker-list">
+    <div class="column-quarter column-one-quarter">
+      <img class="poster" src="/public/images/posters/litmus-test-user-needs.png"/>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

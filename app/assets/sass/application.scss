@@ -95,8 +95,15 @@ $site-width:  1080px;
 }
 
 .sticker-list { margin-top: 40px; }
-.image {width: 100%; border-radius: 50%; }
+.image { width: 100%; border-radius: 50%; }
+.poster { width: 100%; }
 
+.poster:hover {
+  -webkit-box-shadow: 0px 3px 0px 0px rgba(49, 50, 50, 0.29);
+  -moz-box-shadow:    0px 3px 0px 0px rgba(49, 50, 50, 0.29);
+  box-shadow:         0px 3px 0px 0px rgba(49, 50, 50, 0.29);
+  cursor: pointer;
+}
 
 .image:hover {
   -webkit-box-shadow: 0px 3px 0px 0px rgba(49, 50, 50, 0.29);

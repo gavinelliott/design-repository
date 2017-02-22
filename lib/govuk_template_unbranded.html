@@ -50,8 +50,14 @@
 
 
     <header role="banner" id="global-header" class="{% block header_class %}{% endblock %}">
-      <div class="dwp-header">
-        <a href="#">DWP <span>Design Repository</span></a>
+      <div class="header-wrapper">
+        <div class="header-global">
+                <div class="dwp-header">
+                  <a href="#">DWP <span>Design Repository</span></a>
+                </div>
+          {% block inside_header %}{% endblock %}
+        </div>
+        {% block proposition_header %}{% endblock %}
       </div>
     </header>
     <!--end header-->
