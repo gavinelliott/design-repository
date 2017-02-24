@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  DWP Design Repository
+{% endblock %}
+
+{% block content %}
+<div id="big-bar">
+  <div class="big-bar-wrapper">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge no-margin">Keep going</h1>
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <p class="hero-description">by Ben Holliday</p>
+      </div>
+      <div class="column-one-third">
+        <a href="#" class="white-button">Request this sticker</a>
+      </div>
+    </div>
+</div>
+</div>
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-one-third sticker-list">
+      <img class="image-static" src="/public/images/stickers/keep-going.png"/>
+    </div>
+
+    <div class="column-two-thirds">
+      <h3 class="heading-medium">About this sticker</h3>
+      <p>The Keep going sticker was designed by <a href="#">Ben Holliday</a>. This sticker is one of our most requested and is available from most members of the UX team.</p>
+      <h3 class="heading-medium">Printing guidance</h3>
+      <p>Below are links to the print ready files.</p>
+      <h3 class="heading-medium">Print files</h3>
+      <button class="button" title="Download file bundle">Download file bundle</button>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
