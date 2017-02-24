@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  DWP Design Repository
+{% endblock %}
+
+{% block content %}
+<div id="big-bar">
+  <div class="big-bar-wrapper">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge no-margin">Java Coffee</h1>
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <p class="hero-description">by Eddie Shannon</p>
+      </div>
+      <div class="column-one-third">
+        <a href="#" class="white-button">Request this sticker</a>
+      </div>
+    </div>
+</div>
+</div>
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-one-third sticker-list">
+      <img class="image-static-square" src="/public/images/stickers/Java_coffee.png"/>
+    </div>
+
+    <div class="column-two-thirds">
+      <h3 class="heading-medium">About this sticker</h3>
+      <p>The Java Coffee stickers was designed by <a href="#">Eddie Shannon</a>. Designed for the Software Engineering meet-up in January 2017.</p>
+      <h3 class="heading-medium">Printing guidance</h3>
+      <p>Below are links to the print ready files. We recommend you have this sticker printed with a vinyl finish for best effect.</p>
+      <h3 class="heading-medium">Print files</h3>
+      <button class="button" title="Download file bundle">Download file bundle</button>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
