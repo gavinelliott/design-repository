@@ -45,15 +45,16 @@ $site-width:  1080px;
 #big-bar .big-bar-wrapper {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 40px 30px;
+  padding: 40px 30px 50px 30px;
 }
 
 .no-margin { padding-bottom: 0; margin-bottom: 0;}
 .no-margin-top { margin-top: 0; }
 .margin-top { margin-top: 40px; }
 .margin-bottom { margin-bottom: 20px; }
-
-
+.text-centre { text-align: center; }
+.fl { float: left; }
+.fr { float: right; }
 .hero-description {
   font-size: 24px;
   width: 80%;
@@ -75,7 +76,7 @@ $site-width:  1080px;
   padding: 15px 50px 10px 20px;
   text-decoration: none;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 30px; 
 }
 
 #logo { display: none; }
