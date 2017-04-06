@@ -14,7 +14,8 @@ gulp.task('server', function () {
   nodemon(
     {
       script: 'server.js',
-      ext: '*'
+      ext: '*',
+      ignore: ['public']
     }
   );
 });
