@@ -3,10 +3,8 @@ var express = require('express')
 var session = require('express-session')
 var nunjucks = require('nunjucks')
 var routes = require('./app/routes.js')
-var documentationRoutes = require('./docs/documentation_routes.js')
 var favicon = require('serve-favicon')
 var app = express()
-var documentationApp = express()
 var bodyParser = require('body-parser')
 var browserSync = require('browser-sync')
 var config = require('./app/config.js')
@@ -26,14 +24,9 @@ env = env.toLowerCase()
 useAuth = useAuth.toLowerCase()
 useHttps = useHttps.toLowerCase()
 
-var useDocumentation = (config.useDocumentation === 'true')
-
 // Promo mode redirects the root to /docs - so our landing page is docs when published on heroku
 var promoMode = process.env.PROMO_MODE || 'false'
 promoMode = promoMode.toLowerCase()
-
-// Disable promo mode if docs aren't enabled
-if (!useDocumentation) promoMode = 'false'
 
 // Force HTTPs on production connections. Do this before asking for basicAuth to
 // avoid making users fill in the username/password twice (once for `http`, and
@@ -73,23 +66,6 @@ app.use('/public/images/icons', express.static(path.join(__dirname, '/govuk_modu
 // Elements refers to icon folder instead of images folder
 app.use(favicon(path.join(__dirname, 'govuk_modules', 'govuk_template', 'assets', 'images', 'favicon.ico')))
 
-// Set up documentation app
-if (useDocumentation) {
-  var documentationViews = [path.join(__dirname, '/docs/views/'), path.join(__dirname, '/lib/')]
-
-  var nunjucksDocumentationEnv = nunjucks.configure(documentationViews, {
-    autoescape: true,
-    express: documentationApp,
-    noCache: true,
-    watch: true
-  })
-  // Nunjucks filters
-  utils.addNunjucksFilters(nunjucksDocumentationEnv)
-
-  // Set views engine
-  documentationApp.set('view engine', 'html')
-}
-
 // Support for parsing data in POSTs
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
@@ -114,10 +90,6 @@ app.locals.serviceName = config.serviceName
 // Redirect root to /docs when in promo mode.
 if (promoMode === 'true') {
   console.log('Prototype kit running in promo mode')
-
-  app.get('/', function (req, res) {
-    res.redirect('/docs')
-  })
 
   // allow search engines to index the prototype kit promo site
   app.get('/robots.txt', function (req, res) {
@@ -153,17 +125,6 @@ app.get('/prototype-admin/download-latest', function (req, res) {
   res.redirect(url)
 })
 
-if (useDocumentation) {
-  // Copy app locals to documentation app locals
-  documentationApp.locals = app.locals
-
-  // Create separate router for docs
-  app.use('/docs', documentationApp)
-
-  // Docs under the /docs namespace
-  documentationApp.use('/', documentationRoutes)
-}
-
 // Strip .html and .htm if provided
 app.get(/\.html?$/i, function (req, res) {
   var path = req.path
@@ -179,15 +140,6 @@ app.get(/\.html?$/i, function (req, res) {
 app.get(/^\/([^.]+)$/, function (req, res) {
   utils.matchRoutes(req, res)
 })
-
-if (useDocumentation) {
-  // Documentation  routes
-  documentationApp.get(/^\/([^.]+)$/, function (req, res) {
-    if (!utils.matchMdRoutes(req, res)) {
-      utils.matchRoutes(req, res)
-    }
-  })
-}
 
 console.log('\nGOV.UK Prototype kit v' + releaseVersion)
 // Display warning not to use kit for production services.
