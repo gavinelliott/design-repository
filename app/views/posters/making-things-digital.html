@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  DWP Design Repository
+{% endblock %}
+
+{% block content %}
+<div id="big-bar">
+  <div class="big-bar-wrapper">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge no-margin">Making things digital</h1>
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-one-third">
+        <a href="mailto:artworkrequest.digitaldwp@gmail.com?Subject=Ask%20what%20people%20do%20poster%20request" class="white-button">Request this poster</a>
+      </div>
+    </div>
+</div>
+</div>
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-one-third sticker-list">
+      <img class="poster" src="/public/images/posters/what-is-digital-2.png"/>
+    </div>
+
+    <div class="column-two-thirds">
+      <h3 class="heading-medium">About this poster</h3>
+      <p>This poster was designed by <a href="https://twitter.com/BenHolliday">Ben Holliday</a>.</p>
+      <h3 class="heading-medium">Printing guidance</h3>
+      <p>This poster looks best printed A4 size or bigger.</p>
+      <a class="button" href="/public/images/posters/what-is-digital-2.zip" title="Download file bundle">Download file bundle</a>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
